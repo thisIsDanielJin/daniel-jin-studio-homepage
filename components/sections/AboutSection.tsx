@@ -6,10 +6,10 @@ import { fadeInLeft, fadeInRight } from "@/lib/motion";
 import { HiCheckCircle, HiBolt } from "react-icons/hi2";
 
 const highlights = [
+  "B.Sc. Computer Science — TU Berlin & Seoul National University",
   "SAP Developer with enterprise experience",
   "Based in Berlin, working with clients worldwide",
   "Fluent in English and German",
-  "Obsessed with results and great UX",
 ];
 
 export function AboutSection() {
