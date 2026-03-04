@@ -1,0 +1,339 @@
+@import "tailwindcss";
+
+/* =================================
+   BRIGHTBYTE BERLIN - DESIGN SYSTEM
+   "Stand Out. Get Found. Grow."
+   Dark Theme - Elements that Shine
+   ================================= */
+
+:root {
+  /* Dark Theme Base */
+  --color-bg-primary: #09090B;
+  --color-bg-secondary: #18181B;
+  --color-bg-elevated: #27272A;
+  --color-bg-card: #1C1C1F;
+
+  /* Light/Bright Theme (for CTA section) */
+  --color-bg-bright: #FFFFFF;
+  --color-bg-bright-secondary: #FAFAFA;
+
+  /* Text Colors */
+  --color-text-primary: #FAFAFA;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+  --color-text-dark: #09090B;
+
+  /* BrightByte Accent - Diamond Bright Blue */
+  --color-bright: #3B82F6;
+  --color-bright-hover: #60A5FA;
+  --color-bright-soft: #93C5FD;
+  --color-bright-pale: rgba(59, 130, 246, 0.1);
+  --color-accent: #3B82F6;
+  --color-electric: #2563EB;
+
+  /* Spotlight Glow */
+  --glow-spotlight: 0 0 120px 60px rgba(59, 130, 246, 0.15);
+  --glow-sm: 0 0 20px rgba(59, 130, 246, 0.3);
+  --glow-md: 0 0 40px rgba(59, 130, 246, 0.4);
+  --glow-lg: 0 0 80px rgba(59, 130, 246, 0.3);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.5);
+
+  /* Glass Effects */
+  --glass-dark: rgba(24, 24, 27, 0.8);
+  --glass-light: rgba(255, 255, 255, 0.9);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --glass-border-light: rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-background: var(--color-bg-primary);
+  --color-foreground: var(--color-text-primary);
+
+  --color-bg-primary: #09090B;
+  --color-bg-secondary: #18181B;
+  --color-bg-elevated: #27272A;
+  --color-bg-card: #1C1C1F;
+  --color-bg-bright: #FFFFFF;
+  --color-text-primary: #FAFAFA;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+  --color-text-dark: #09090B;
+  --color-bright: #3B82F6;
+  --color-bright-hover: #60A5FA;
+  --color-bright-soft: #93C5FD;
+  --color-accent: #3B82F6;
+  --color-electric: #2563EB;
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-satoshi);
+}
+
+/* =================================
+   BASE STYLES
+   ================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* =================================
+   SPOTLIGHT EFFECTS
+   ================================= */
+
+/* Spotlight beam from above */
+.spotlight-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background:
+    conic-gradient(
+      from 180deg at 50% 0%,
+      transparent 40%,
+      rgba(59, 130, 246, 0.03) 45%,
+      rgba(59, 130, 246, 0.08) 50%,
+      rgba(59, 130, 246, 0.03) 55%,
+      transparent 60%
+    );
+  pointer-events: none;
+}
+
+/* Spotlight glow source */
+.spotlight-source {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* Glowing text */
+.text-glow {
+  color: var(--color-bright);
+  text-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-bright) 0%, var(--color-bright-soft) 50%, var(--color-electric) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card with subtle glow on hover */
+.card-glow {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all var(--transition-base);
+}
+
+.card-glow:hover {
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow: var(--glow-sm);
+  transform: translateY(-2px);
+}
+
+/* Glass effect - dark */
+.glass-dark {
+  background: var(--glass-dark);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border-dark);
+}
+
+/* Glass effect - light (for bright section) */
+.glass-light {
+  background: var(--glass-light);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border-light);
+}
+
+/* Section padding */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+/* Container */
+.container-max {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container-max {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* =================================
+   ANIMATIONS
+   ================================= */
+
+@keyframes spotlight-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-spotlight {
+  animation: spotlight-pulse 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* =================================
+   SCROLLBAR (Dark theme)
+   ================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-elevated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bright);
+}
+
+/* =================================
+   SELECTION
+   ================================= */
+
+::selection {
+  background: var(--color-bright);
+  color: var(--color-bg-primary);
+}
+
+/* =================================
+   FOCUS STYLES
+   ================================= */
+
+:focus-visible {
+  outline: 2px solid var(--color-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* =================================
+   BUTTON GLOW
+   ================================= */
+
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-glow:hover::before {
+  transform: translateX(100%);
+}
+
+/* =================================
+   BRIGHT SECTION (Customer's time to shine)
+   ================================= */
+
+.section-bright {
+  background: var(--color-bg-bright);
+  color: var(--color-text-dark);
+}
+
+.section-bright h1,
+.section-bright h2,
+.section-bright h3 {
+  color: var(--color-text-dark);
+}
