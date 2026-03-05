@@ -16,7 +16,7 @@ export function TestimonialsSection() {
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((testimonial) => (
           <StaggerItem key={testimonial.id}>
-            <div className="h-full flex flex-col bg-bg-card rounded-2xl p-8 border border-white/5 hover:border-bright/20 transition-all duration-300">
+            <div className="h-full flex flex-col bg-bg-card rounded-2xl p-8 border-[1.5px] border-white/8 hover:border-2 hover:border-bright/30 transition-all duration-300">
               {/* Stars */}
               <div className="flex gap-1 mb-5">
                 {[...Array(5)].map((_, i) => (

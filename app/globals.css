@@ -155,12 +155,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Card with subtle glow on hover */
 .card-glow {
   background: var(--color-bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
   transition: all var(--transition-base);
 }
 
 .card-glow:hover {
-  border-color: rgba(251, 191, 36, 0.2);
+  border-width: 2px;
+  border-color: rgba(251, 191, 36, 0.3);
   box-shadow: var(--glow-sm);
   transform: translateY(-2px);
 }
@@ -258,6 +259,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-glow-pulse {
   animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
 }
 
 /* =================================

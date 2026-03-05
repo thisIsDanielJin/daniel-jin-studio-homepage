@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { navLinks, footerLinks } from "@/data/navigation";
+import { footerLinks } from "@/data/navigation";
 import { Container } from "@/components/ui/Container";
 import Link from "next/link";
 import { HiEnvelope } from "react-icons/hi2";
@@ -48,80 +48,56 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-bg-primary border-t border-white/5 py-16">
+    <footer className="bg-bg-primary border-t border-white/5">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <Link
+        <div className="py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          {/* Brand + tagline */}
+          <div>
+            <a
               href="/"
-              className="flex items-center gap-2.5 text-xl font-bold tracking-tight mb-5"
+              className="flex items-center gap-2 text-lg font-bold tracking-tight mb-2"
             >
-              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-bright/10 to-electric/10 border border-bright/20 flex items-center justify-center">
+              <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-bright/10 to-electric/10 border border-bright/20 flex items-center justify-center">
                 <PixelClusterLogo />
               </span>
               <span>
                 <span className="text-bright">Bright</span>
                 <span className="text-text-primary">Byte</span>
-                <span className="text-text-muted font-normal ml-1">Berlin</span>
+                <span className="text-text-muted font-normal ml-1 text-sm">Berlin</span>
               </span>
-            </Link>
-            <p className="text-text-secondary max-w-sm leading-relaxed mb-4">
-              Putting small businesses in the spotlight with websites that get found
-              and convert visitors into customers.
-            </p>
-            <p className="text-text-muted text-sm">
-              Based in Berlin, serving clients worldwide.
+            </a>
+            <p className="text-text-muted text-sm max-w-xs">
+              Websites that put your business in the spotlight.
             </p>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="font-semibold mb-5 text-text-primary">Navigation</h3>
-            <ul className="space-y-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-text-secondary hover:text-bright transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold mb-5 text-text-primary">Connect</h3>
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "p-3 rounded-xl",
-                    "bg-white/5 hover:bg-bright hover:text-bg-primary",
-                    "transition-all duration-300 text-text-secondary"
-                  )}
-                  aria-label={social.name}
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
+          {/* Social */}
+          <div className="flex gap-3">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "p-2.5 rounded-xl",
+                  "bg-white/5 hover:bg-bright hover:text-bg-primary",
+                  "transition-all duration-300 text-text-muted"
+                )}
+                aria-label={social.name}
+              >
+                <social.icon className="h-4 w-4" />
+              </a>
+            ))}
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-text-muted text-sm">
+        <div className="py-5 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-text-muted text-xs">
             &copy; {currentYear} BrightByte Berlin. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-5 text-xs">
             {footerLinks.legal.map((link) => (
               <Link
                 key={link.href}

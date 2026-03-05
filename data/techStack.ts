@@ -12,6 +12,7 @@ export const techStack: TechItem[] = [
   { name: "Node.js", icon: "SiNodedotjs", category: "backend" },
   { name: "Go", icon: "SiGo", category: "backend" },
   { name: "PostgreSQL", icon: "SiPostgresql", category: "backend" },
+  { name: "GraphQL", icon: "SiGraphql", category: "backend" },
 
   // Tools
   { name: "Git", icon: "SiGit", category: "tools" },
@@ -20,6 +21,7 @@ export const techStack: TechItem[] = [
   // Deployment
   { name: "Vercel", icon: "SiVercel", category: "deployment" },
   { name: "Docker", icon: "SiDocker", category: "deployment" },
+  { name: "Kubernetes", icon: "SiKubernetes", category: "deployment" },
 ];
 
 export const getTechByCategory = (category: TechItem["category"]) =>

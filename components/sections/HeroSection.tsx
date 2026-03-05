@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { fadeInUp, fadeIn, staggerContainer } from "@/lib/motion";
+import { fadeInUp, staggerContainer } from "@/lib/motion";
 import { GradualBlur } from "@/components/animations/GradualBlur";
 import Link from "next/link";
 import { HiBolt, HiArrowRight } from "react-icons/hi2";
@@ -304,14 +304,6 @@ export function HeroSection() {
             variants={staggerContainer}
             className="text-center lg:text-left"
           >
-            {/* Tagline */}
-            <motion.div variants={fadeIn} className="mb-8">
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-text-secondary text-sm font-medium backdrop-blur-sm">
-                <HiBolt className="w-4 h-4 text-bright" />
-                Putting your brand in the spotlight
-              </span>
-            </motion.div>
-
             {/* Main Headline with Gradual Blur */}
             <motion.h1
               variants={fadeInUp}

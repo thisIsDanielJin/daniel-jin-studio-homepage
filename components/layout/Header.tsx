@@ -74,7 +74,7 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50",
           "transition-all duration-500 ease-out",
-          isScrolled ? "py-3 px-4" : "py-5 px-0"
+          isScrolled ? "py-3 px-2" : "py-5 px-0"
         )}
       >
         <div
@@ -86,10 +86,11 @@ export function Header() {
           )}
         >
           <Container className={cn(isScrolled && "px-3")}>
-            <nav className="flex items-center justify-between py-1">
+            <nav className="flex items-center justify-between py-4">
               {/* Logo */}
               <Link
                 href="/"
+                onClick={(e) => { e.preventDefault(); window.location.href = "/"; }}
                 className="flex items-center gap-3 text-xl font-bold tracking-tight transition-all hover:opacity-80 group"
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all bg-gradient-to-br from-bright/10 to-electric/10 border border-bright/20">

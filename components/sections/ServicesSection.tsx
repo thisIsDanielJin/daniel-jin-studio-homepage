@@ -49,7 +49,7 @@ function BentoCard({ service, layout, index }: BentoCardProps) {
       <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-bright/0 via-bright/30 to-bright/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Card content */}
-      <div className="relative h-full bg-bg-card rounded-2xl border border-white/5 overflow-hidden p-6 transition-all duration-500 hover:border-transparent hover:shadow-2xl hover:shadow-bright/10">
+      <div className="relative h-full bg-bg-card rounded-2xl border-[1.5px] border-white/8 overflow-hidden p-6 transition-all duration-500 hover:border-transparent hover:shadow-2xl hover:shadow-bright/10">
         {/* Background gradient on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-bright/5 via-transparent to-electric/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -83,7 +83,7 @@ function BentoCard({ service, layout, index }: BentoCardProps) {
                 {service.features.map((feature) => (
                   <li
                     key={feature}
-                    className="text-xs px-2.5 py-1 rounded-full font-medium bg-white/5 text-text-muted border border-white/5 group-hover:bg-bright/10 group-hover:text-bright group-hover:border-bright/20 transition-all duration-300"
+                    className="text-xs px-2.5 py-1 rounded-full font-medium bg-white/5 text-text-muted border border-white/8 group-hover:bg-bright/10 group-hover:text-bright group-hover:border-bright/30 transition-all duration-300"
                   >
                     {feature}
                   </li>
