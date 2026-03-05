@@ -6,24 +6,39 @@ import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/data/navigation";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { HiBars3, HiXMark, HiBolt } from "react-icons/hi2";
+import { HiBars3, HiXMark } from "react-icons/hi2";
 import Link from "next/link";
+
+// D1 Pixel Cluster Logo
+function PixelClusterLogo({ className, inverted = false }: { className?: string; inverted?: boolean }) {
+  const color = inverted ? "#09090b" : "#FBBF24";
+
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 32 32"
+      fill="none"
+      className={className}
+    >
+      <rect x="4" y="4" width="6" height="6" rx="1" fill={color} opacity={0.3} />
+      <rect x="12" y="4" width="6" height="6" rx="1" fill={color} opacity={0.5} />
+      <rect x="4" y="12" width="6" height="6" rx="1" fill={color} opacity={0.6} />
+      <rect x="12" y="12" width="6" height="6" rx="1" fill={color} />
+      <rect x="20" y="12" width="6" height="6" rx="1" fill={color} opacity={0.7} />
+      <rect x="12" y="20" width="6" height="6" rx="1" fill={color} opacity={0.4} />
+      <rect x="20" y="20" width="6" height="6" rx="1" fill={color} opacity={0.8} />
+    </svg>
+  );
+}
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isOnBrightSection, setIsOnBrightSection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      // Check if we're on the bright contact section
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        const rect = contactSection.getBoundingClientRect();
-        setIsOnBrightSection(rect.top <= 80 && rect.bottom > 80);
-      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -64,31 +79,23 @@ export function Header() {
       >
         <div
           className={cn(
-            "transition-all duration-500 ease-out mx-auto",
+            "transition-all duration-500 ease-out mx-auto border",
             isScrolled
-              ? cn(
-                  "max-w-5xl rounded-2xl border shadow-lg",
-                  isOnBrightSection
-                    ? "bg-white/80 backdrop-blur-xl border-black/5 shadow-black/10"
-                    : "bg-bg-secondary/80 backdrop-blur-xl border-white/10 shadow-black/20"
-                )
-              : "max-w-7xl bg-transparent"
+              ? "max-w-5xl rounded-2xl shadow-lg bg-bg-secondary/80 backdrop-blur-xl border-white/10 shadow-black/20"
+              : "max-w-7xl bg-transparent border-transparent"
           )}
         >
-          <Container className={cn(isScrolled && "px-4")}>
-            <nav className="flex items-center justify-between py-2">
-              {/* Logo - BBB (Triple B) */}
+          <Container className={cn(isScrolled && "px-3")}>
+            <nav className="flex items-center justify-between py-1">
+              {/* Logo */}
               <Link
                 href="/"
-                className="flex items-center gap-2.5 text-xl font-bold tracking-tight transition-all hover:opacity-80 group"
+                className="flex items-center gap-3 text-xl font-bold tracking-tight transition-all hover:opacity-80 group"
               >
-                <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-bright to-electric flex items-center justify-center shadow-lg group-hover:shadow-bright/30 transition-all">
-                  <HiBolt className="w-5 h-5 text-bg-primary" />
-                </span>
-                <span className={cn(
-                  "transition-colors",
-                  isOnBrightSection && isScrolled ? "text-bg-primary" : "text-text-primary"
-                )}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all bg-gradient-to-br from-bright/10 to-electric/10 border border-bright/20">
+                  <PixelClusterLogo />
+                </div>
+                <span className="transition-colors text-text-primary">
                   <span className="text-bright">Bright</span>
                   <span>Byte</span>
                   <span className="text-text-muted font-normal ml-1">Berlin</span>
@@ -103,9 +110,7 @@ export function Header() {
                     href={link.href}
                     className={cn(
                       "text-sm font-medium transition-all",
-                      isOnBrightSection && isScrolled
-                        ? "text-text-dark/70 hover:text-text-dark"
-                        : "text-text-secondary hover:text-text-primary",
+                      "text-text-secondary hover:text-text-primary",
                       "relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0",
                       "after:bg-bright after:transition-all after:duration-300",
                       "hover:after:w-full"
@@ -120,9 +125,7 @@ export function Header() {
               <div className="hidden lg:block">
                 <Button
                   size="sm"
-                  className={cn(
-                    isOnBrightSection && isScrolled && "bg-bg-primary text-white hover:bg-bg-secondary"
-                  )}
+                  className="rounded-lg"
                   asChild
                 >
                   <Link href="#contact">
@@ -134,12 +137,7 @@ export function Header() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={cn(
-                  "lg:hidden p-2.5 -mr-2 rounded-xl transition-colors",
-                  isOnBrightSection && isScrolled
-                    ? "text-text-dark hover:bg-black/5"
-                    : "text-text-primary hover:bg-white/10"
-                )}
+                className="lg:hidden p-2.5 -mr-2 rounded-xl transition-colors text-text-primary hover:bg-white/10"
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
               >

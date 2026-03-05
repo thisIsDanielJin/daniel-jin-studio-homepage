@@ -1,11 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { fadeInUp, fadeIn, staggerContainer } from "@/lib/motion";
+import { GradualBlur } from "@/components/animations/GradualBlur";
 import Link from "next/link";
 import { HiBolt, HiArrowRight } from "react-icons/hi2";
+
+// Dynamically import Grainient to avoid SSR issues with WebGL
+const Grainient = dynamic(
+  () => import("@/components/reactbits/Grainient"),
+  { ssr: false }
+);
 
 function LaserFlowVisual() {
   // Pre-generate stable random values for particles
@@ -27,16 +35,16 @@ function LaserFlowVisual() {
         <defs>
           <linearGradient id="laserBeamH" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />
-            <stop offset="30%" stopColor="#3B82F6" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.8" />
-            <stop offset="70%" stopColor="#3B82F6" stopOpacity="0.2" />
+            <stop offset="30%" stopColor="#FBBF24" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#FCD34D" stopOpacity="0.8" />
+            <stop offset="70%" stopColor="#FBBF24" stopOpacity="0.2" />
             <stop offset="100%" stopColor="transparent" />
           </linearGradient>
           <linearGradient id="laserBeamV" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="transparent" />
-            <stop offset="30%" stopColor="#3B82F6" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.8" />
-            <stop offset="70%" stopColor="#3B82F6" stopOpacity="0.2" />
+            <stop offset="30%" stopColor="#FBBF24" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#FCD34D" stopOpacity="0.8" />
+            <stop offset="70%" stopColor="#FBBF24" stopOpacity="0.2" />
             <stop offset="100%" stopColor="transparent" />
           </linearGradient>
           <filter id="glow">
@@ -73,7 +81,7 @@ function LaserFlowVisual() {
           {/* Top-left to center */}
           <motion.line
             x1="0" y1="0" x2="200" y2="250"
-            stroke="#3B82F6"
+            stroke="#FBBF24"
             strokeWidth="2"
             strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -83,7 +91,7 @@ function LaserFlowVisual() {
           {/* Top-right to center */}
           <motion.line
             x1="400" y1="0" x2="200" y2="250"
-            stroke="#3B82F6"
+            stroke="#FBBF24"
             strokeWidth="2"
             strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -93,7 +101,7 @@ function LaserFlowVisual() {
           {/* Bottom-left to center */}
           <motion.line
             x1="0" y1="500" x2="200" y2="250"
-            stroke="#60A5FA"
+            stroke="#FCD34D"
             strokeWidth="2"
             strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -103,7 +111,7 @@ function LaserFlowVisual() {
           {/* Bottom-right to center */}
           <motion.line
             x1="400" y1="500" x2="200" y2="250"
-            stroke="#60A5FA"
+            stroke="#FCD34D"
             strokeWidth="2"
             strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -173,8 +181,8 @@ function LaserFlowVisual() {
             className="absolute inset-0 rounded-full bg-gradient-to-br from-bright-soft via-bright to-electric"
             style={{
               boxShadow: `
-                0 0 60px rgba(59, 130, 246, 0.6),
-                0 0 120px rgba(59, 130, 246, 0.4),
+                0 0 60px rgba(251, 191, 36, 0.6),
+                0 0 120px rgba(251, 191, 36, 0.4),
                 inset 0 0 40px rgba(255, 255, 255, 0.4)
               `
             }}
@@ -213,7 +221,7 @@ function LaserFlowVisual() {
             }}
             className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-bright"
             style={{
-              boxShadow: '0 0 12px rgba(59, 130, 246, 0.9)',
+              boxShadow: '0 0 12px rgba(251, 191, 36, 0.9)',
             }}
           />
         ))}
@@ -236,13 +244,41 @@ function LaserFlowVisual() {
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-bg-primary">
+      {/* Grainient Background */}
+      <div className="absolute inset-0 opacity-45">
+        <Grainient
+          color1="#FBBF24"
+          color2="#F59E0B"
+          color3="#0a0a0a"
+          colorBalance={-0.15}
+          centerX={0.3}
+          centerY={0.0}
+          zoom={0.9}
+          timeSpeed={0.12}
+          grainAmount={0.06}
+          contrast={1.2}
+          saturation={0.85}
+          warpStrength={1.0}
+          warpAmplitude={50}
+          warpFrequency={5.0}
+        />
+      </div>
+
+      {/* Dark gradient overlay for text readability */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to right, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.2) 50%, transparent 75%)'
+        }}
+      />
+
       {/* Background subtle gradient */}
       <div
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 50% at 70% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 30% 60%, rgba(59, 130, 246, 0.03) 0%, transparent 50%)
+            radial-gradient(ellipse 80% 50% at 70% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 30% 60%, rgba(251, 191, 36, 0.03) 0%, transparent 50%)
           `
         }}
       />
@@ -252,8 +288,8 @@ export function HeroSection() {
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.5) 1px, transparent 1px)
+            linear-gradient(rgba(251, 191, 36, 0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(251, 191, 36, 0.5) 1px, transparent 1px)
           `,
           backgroundSize: '60px 60px'
         }}
@@ -276,16 +312,20 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Headline with Gradual Blur */}
             <motion.h1
               variants={fadeInUp}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-8"
             >
-              <span className="text-text-primary">Stand out.</span>
-              <br />
-              <span className="text-glow">Get found.</span>
-              <br />
-              <span className="text-text-primary">Grow.</span>
+              <span className="block text-text-primary">
+                <GradualBlur text="Stand out." delay={0.2} />
+              </span>
+              <span className="block text-glow">
+                <GradualBlur text="Get found." delay={0.4} />
+              </span>
+              <span className="block text-text-primary">
+                <GradualBlur text="Grow." delay={0.6} />
+              </span>
             </motion.h1>
 
             {/* Subheadline */}

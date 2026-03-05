@@ -2,8 +2,29 @@ import { cn } from "@/lib/utils";
 import { navLinks, footerLinks } from "@/data/navigation";
 import { Container } from "@/components/ui/Container";
 import Link from "next/link";
-import { HiEnvelope, HiBolt } from "react-icons/hi2";
+import { HiEnvelope } from "react-icons/hi2";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+
+// D1 Pixel Cluster Logo
+function PixelClusterLogo({ className }: { className?: string }) {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 32 32"
+      fill="none"
+      className={className}
+    >
+      <rect x="4" y="4" width="6" height="6" rx="1" fill="#FBBF24" opacity={0.3} />
+      <rect x="12" y="4" width="6" height="6" rx="1" fill="#FBBF24" opacity={0.5} />
+      <rect x="4" y="12" width="6" height="6" rx="1" fill="#FBBF24" opacity={0.6} />
+      <rect x="12" y="12" width="6" height="6" rx="1" fill="#FBBF24" />
+      <rect x="20" y="12" width="6" height="6" rx="1" fill="#FBBF24" opacity={0.7} />
+      <rect x="12" y="20" width="6" height="6" rx="1" fill="#FBBF24" opacity={0.4} />
+      <rect x="20" y="20" width="6" height="6" rx="1" fill="#FBBF24" opacity={0.8} />
+    </svg>
+  );
+}
 
 const socialLinks = [
   {
@@ -36,8 +57,8 @@ export function Footer() {
               href="/"
               className="flex items-center gap-2.5 text-xl font-bold tracking-tight mb-5"
             >
-              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-bright to-electric flex items-center justify-center">
-                <HiBolt className="w-5 h-5 text-bg-primary" />
+              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-bright/10 to-electric/10 border border-bright/20 flex items-center justify-center">
+                <PixelClusterLogo />
               </span>
               <span>
                 <span className="text-bright">Bright</span>

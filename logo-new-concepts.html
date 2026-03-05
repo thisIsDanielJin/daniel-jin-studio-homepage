@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightByte Berlin - New Logo Concepts</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #09090B;
+      color: #FAFAFA;
+      min-height: 100vh;
+      padding: 40px;
+    }
+    h1 { text-align: center; margin-bottom: 10px; font-size: 1.5rem; color: #FBBF24; }
+    .subtitle { text-align: center; color: #71717A; margin-bottom: 50px; font-size: 0.875rem; }
+    h2 { font-size: 1rem; color: #A1A1AA; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .section { max-width: 1200px; margin: 0 auto 60px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .card {
+      background: #18181B;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .card h3 { font-size: 0.9rem; color: #FBBF24; margin-bottom: 6px; }
+    .card p { font-size: 0.75rem; color: #52525B; margin-bottom: 20px; line-height: 1.5; }
+    .logo-display {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px;
+      background: #09090B;
+      border-radius: 10px;
+    }
+    .logo-text { font-weight: 700; font-size: 1.1rem; }
+    .logo-text .bright { color: #FBBF24; }
+    .logo-text .byte { color: #FAFAFA; }
+    .logo-text .berlin { color: #71717A; font-weight: 400; margin-left: 4px; font-size: 0.85em; }
+
+    .header-sim {
+      background: #18181B;
+      border-radius: 16px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .header-sim .logo-group { display: flex; align-items: center; gap: 12px; }
+    .header-sim .nav-links { display: flex; gap: 28px; font-size: 0.85rem; color: #A1A1AA; }
+    .header-sim .cta {
+      background: #FBBF24;
+      color: #09090B;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <h1>New Logo Concepts</h1>
+  <p class="subtitle">Fresh directions for BrightByte Berlin</p>
+
+  <div class="section">
+    <h2>Logo Concepts</h2>
+    <div class="grid">
+
+      <!-- 1: Spark/Star -->
+      <div class="card">
+        <h3>1: Spark Star</h3>
+        <p>A 4-point spark representing brightness and energy. Simple, memorable, works at any size.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 0 L18 12 L16 14 L14 12 Z" fill="#FBBF24"/>
+              <path d="M16 32 L14 20 L16 18 L18 20 Z" fill="#FBBF24"/>
+              <path d="M0 16 L12 14 L14 16 L12 18 Z" fill="#FBBF24"/>
+              <path d="M32 16 L20 18 L18 16 L20 14 Z" fill="#FBBF24"/>
+              <circle cx="16" cy="16" r="4" fill="#FBBF24"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: Code Brackets -->
+      <div class="card">
+        <h3>2: Code Brackets</h3>
+        <p>Developer-focused. The B inside code brackets shows tech expertise.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="36" height="28" viewBox="0 0 36 28" fill="none">
+              <path d="M8 2 L2 14 L8 26" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M28 2 L34 14 L28 26" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <text x="18" y="19" font-family="system-ui" font-size="16" font-weight="700" fill="#FBBF24" text-anchor="middle">B</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Spotlight Cone -->
+      <div class="card">
+        <h3>3: Spotlight</h3>
+        <p>A spotlight beam shining down. Ties directly into "putting your brand in the spotlight".</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <ellipse cx="16" cy="4" rx="6" ry="3" fill="#FBBF24"/>
+              <path d="M10 5 L6 28 L26 28 L22 5" fill="url(#spot1)" opacity="0.6"/>
+              <ellipse cx="16" cy="28" rx="10" ry="3" fill="#FBBF24" opacity="0.4"/>
+              <defs>
+                <linearGradient id="spot1" x1="16" y1="5" x2="16" y2="28">
+                  <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#FBBF24" stop-opacity="0.1"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: Hexagon Tech -->
+      <div class="card">
+        <h3>4: Hex Tech</h3>
+        <p>Hexagon with B - modern tech feel, works great as app icon.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="36" viewBox="0 0 32 36" fill="none">
+              <path d="M16 2 L30 10 L30 26 L16 34 L2 26 L2 10 Z" fill="#FBBF24"/>
+              <text x="16" y="23" font-family="system-ui" font-size="18" font-weight="800" fill="#09090B" text-anchor="middle">B</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: Rounded Square B -->
+      <div class="card">
+        <h3>5: Bold Square</h3>
+        <p>Simple rounded square with bold B. Clean, professional, versatile.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,#FBBF24,#F59E0B);border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(251,191,36,0.35);">
+            <span style="font-size:22px;font-weight:800;color:#09090B;">B</span>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6: Lightning B -->
+      <div class="card">
+        <h3>6: Lightning B</h3>
+        <p>The B with an integrated lightning bolt. Energy, speed, power.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="34" viewBox="0 0 28 34" fill="none">
+              <path d="M6 2 L6 32 L18 32 C24 32 26 28 26 24 C26 20 24 18 20 17 C24 16 25 13 25 10 C25 5 22 2 16 2 Z M12 8 L16 8 C18 8 19 9 19 11 C19 13 18 14 16 14 L12 14 Z M12 20 L17 20 C19 20 20 21 20 24 C20 27 19 28 17 28 L12 28 Z" fill="#FBBF24"/>
+              <path d="M16 0 L10 14 L18 14 L8 34 L14 18 L7 18 Z" fill="#09090B" opacity="0"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7: Gradient Ring -->
+      <div class="card">
+        <h3>7: Glow Ring</h3>
+        <p>B inside a glowing ring. Represents spotlight, focus, premium.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <circle cx="17" cy="17" r="15" stroke="url(#ring1)" stroke-width="3" fill="none"/>
+              <text x="17" y="23" font-family="system-ui" font-size="17" font-weight="700" fill="#FBBF24" text-anchor="middle">B</text>
+              <defs>
+                <linearGradient id="ring1" x1="0" y1="0" x2="34" y2="34">
+                  <stop offset="0%" stop-color="#FDE68A"/>
+                  <stop offset="50%" stop-color="#FBBF24"/>
+                  <stop offset="100%" stop-color="#F59E0B"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8: Sunrise/Horizon -->
+      <div class="card">
+        <h3>8: Sunrise</h3>
+        <p>Rising sun/horizon. Growth, new beginnings, bright future.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="34" height="28" viewBox="0 0 34 28" fill="none">
+              <path d="M2 24 L32 24" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M17 24 L17 24" stroke="#FBBF24" stroke-width="2"/>
+              <circle cx="17" cy="18" r="10" fill="url(#sun1)"/>
+              <!-- Rays -->
+              <path d="M17 4 L17 8" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 10 L10 12" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+              <path d="M27 10 L24 12" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="sun1" x1="17" y1="8" x2="17" y2="28">
+                  <stop offset="0%" stop-color="#FBBF24"/>
+                  <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.3"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9: Abstract B -->
+      <div class="card">
+        <h3>9: Abstract B</h3>
+        <p>Modern, artistic interpretation of B using curves.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
+              <path d="M4 4 L4 28" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+              <path d="M4 6 C20 6 20 16 4 16" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <path d="M4 16 C24 16 24 28 4 28" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10: Bulb/Idea -->
+      <div class="card">
+        <h3>10: Light Bulb</h3>
+        <p>Stylized light bulb. Ideas, innovation, brightness.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="34" viewBox="0 0 26 34" fill="none">
+              <path d="M13 2 C6 2 2 7 2 13 C2 18 5 21 8 24 L8 28 L18 28 L18 24 C21 21 24 18 24 13 C24 7 20 2 13 2 Z" fill="#FBBF24"/>
+              <path d="M9 30 L17 30 L16 33 L10 33 Z" fill="#FBBF24"/>
+              <path d="M10 24 L16 24" stroke="#09090B" stroke-width="1.5"/>
+              <path d="M10 26 L16 26" stroke="#09090B" stroke-width="1.5"/>
+              <!-- Rays -->
+              <circle cx="13" cy="12" r="4" fill="#09090B" opacity="0.2"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11: Cursor Arrow -->
+      <div class="card">
+        <h3>11: Cursor</h3>
+        <p>Mouse cursor - digital, web-focused, action-oriented.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="32" viewBox="0 0 26 32" fill="none">
+              <path d="M4 2 L4 26 L10 20 L16 30 L20 28 L14 18 L22 18 Z" fill="#FBBF24"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12: Minimal BB -->
+      <div class="card">
+        <h3>12: Stacked BB</h3>
+        <p>Two B's stacked/overlapping for BrightByte. Unique mark.</p>
+        <div class="logo-display">
+          <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <text x="8" y="24" font-family="system-ui" font-size="24" font-weight="800" fill="#FBBF24" opacity="0.4">B</text>
+              <text x="14" y="24" font-family="system-ui" font-size="24" font-weight="800" fill="#FBBF24">B</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Header Preview -->
+  <div class="section">
+    <h2>In Header Context - Top Picks</h2>
+
+    <p style="font-size:0.75rem;color:#71717A;margin-bottom:8px;">Option 5: Bold Square</p>
+    <div class="header-sim">
+      <div class="logo-group">
+        <div style="width:32px;height:32px;background:linear-gradient(135deg,#FBBF24,#F59E0B);border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(251,191,36,0.3);">
+          <span style="font-size:18px;font-weight:800;color:#09090B;">B</span>
+        </div>
+        <div class="logo-text"><span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span></div>
+      </div>
+      <div class="nav-links"><span>Services</span><span>Projects</span><span>About</span></div>
+      <div class="cta">Get Started</div>
+    </div>
+
+    <p style="font-size:0.75rem;color:#71717A;margin-bottom:8px;">Option 1: Spark Star</p>
+    <div class="header-sim">
+      <div class="logo-group">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <path d="M16 0 L18 12 L16 14 L14 12 Z" fill="#FBBF24"/>
+          <path d="M16 32 L14 20 L16 18 L18 20 Z" fill="#FBBF24"/>
+          <path d="M0 16 L12 14 L14 16 L12 18 Z" fill="#FBBF24"/>
+          <path d="M32 16 L20 18 L18 16 L20 14 Z" fill="#FBBF24"/>
+          <circle cx="16" cy="16" r="4" fill="#FBBF24"/>
+        </svg>
+        <div class="logo-text"><span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span></div>
+      </div>
+      <div class="nav-links"><span>Services</span><span>Projects</span><span>About</span></div>
+      <div class="cta">Get Started</div>
+    </div>
+
+    <p style="font-size:0.75rem;color:#71717A;margin-bottom:8px;">Option 4: Hex Tech</p>
+    <div class="header-sim">
+      <div class="logo-group">
+        <svg width="28" height="32" viewBox="0 0 32 36" fill="none">
+          <path d="M16 2 L30 10 L30 26 L16 34 L2 26 L2 10 Z" fill="#FBBF24"/>
+          <text x="16" y="23" font-family="system-ui" font-size="18" font-weight="800" fill="#09090B" text-anchor="middle">B</text>
+        </svg>
+        <div class="logo-text"><span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span></div>
+      </div>
+      <div class="nav-links"><span>Services</span><span>Projects</span><span>About</span></div>
+      <div class="cta">Get Started</div>
+    </div>
+
+    <p style="font-size:0.75rem;color:#71717A;margin-bottom:8px;">Option 9: Abstract B</p>
+    <div class="header-sim">
+      <div class="logo-group">
+        <svg width="24" height="28" viewBox="0 0 28 32" fill="none">
+          <path d="M4 4 L4 28" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+          <path d="M4 6 C20 6 20 16 4 16" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 C24 16 24 28 4 28" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="logo-text"><span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span></div>
+      </div>
+      <div class="nav-links"><span>Services</span><span>Projects</span><span>About</span></div>
+      <div class="cta">Get Started</div>
+    </div>
+
+    <p style="font-size:0.75rem;color:#71717A;margin-bottom:8px;">Option 7: Glow Ring</p>
+    <div class="header-sim">
+      <div class="logo-group">
+        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+          <circle cx="17" cy="17" r="15" stroke="url(#ring2)" stroke-width="3" fill="none"/>
+          <text x="17" y="23" font-family="system-ui" font-size="17" font-weight="700" fill="#FBBF24" text-anchor="middle">B</text>
+          <defs>
+            <linearGradient id="ring2" x1="0" y1="0" x2="34" y2="34">
+              <stop offset="0%" stop-color="#FDE68A"/>
+              <stop offset="50%" stop-color="#FBBF24"/>
+              <stop offset="100%" stop-color="#F59E0B"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="logo-text"><span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span></div>
+      </div>
+      <div class="nav-links"><span>Services</span><span>Projects</span><span>About</span></div>
+      <div class="cta">Get Started</div>
+    </div>
+
+    <p style="font-size:0.75rem;color:#71717A;margin-bottom:8px;">Option 3: Spotlight</p>
+    <div class="header-sim">
+      <div class="logo-group">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <ellipse cx="16" cy="4" rx="6" ry="3" fill="#FBBF24"/>
+          <path d="M10 5 L6 28 L26 28 L22 5" fill="url(#spot2)" opacity="0.6"/>
+          <ellipse cx="16" cy="28" rx="10" ry="3" fill="#FBBF24" opacity="0.4"/>
+          <defs>
+            <linearGradient id="spot2" x1="16" y1="5" x2="16" y2="28">
+              <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#FBBF24" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="logo-text"><span class="bright">Bright</span><span class="byte">Byte</span><span class="berlin">Berlin</span></div>
+      </div>
+      <div class="nav-links"><span>Services</span><span>Projects</span><span>About</span></div>
+      <div class="cta">Get Started</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

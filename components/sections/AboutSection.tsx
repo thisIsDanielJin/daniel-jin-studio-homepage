@@ -3,7 +3,8 @@
 import { Section } from "@/components/layout/Section";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { fadeInLeft, fadeInRight } from "@/lib/motion";
-import { HiCheckCircle, HiBolt } from "react-icons/hi2";
+import { HiCheckCircle } from "react-icons/hi2";
+import Image from "next/image";
 
 const highlights = [
   "B.Sc. Computer Science — TU Berlin & Seoul National University",
@@ -20,24 +21,22 @@ export function AboutSection() {
         <ScrollReveal variants={fadeInLeft}>
           <div className="relative">
             <div className="aspect-square max-w-md mx-auto rounded-2xl bg-bg-card border border-white/5 overflow-hidden relative">
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-bright/10 via-transparent to-electric/10" />
-
-              <div className="w-full h-full flex items-center justify-center relative">
-                <div className="w-28 h-28 rounded-2xl bg-gradient-to-br from-bright to-electric flex items-center justify-center shadow-lg shadow-bright/20">
-                  <span className="text-4xl font-bold text-bg-primary">DJ</span>
-                </div>
-              </div>
+              <Image
+                src="/images/daniel-profile.jpg"
+                alt="Daniel Jin Wodke"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 448px"
+                priority
+              />
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/30 via-transparent to-transparent" />
             </div>
 
             {/* Decorative elements */}
             <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-bright/20 rounded-xl -z-10 blur-xl" />
             <div className="absolute -top-3 -left-3 w-16 h-16 bg-electric/20 rounded-lg -z-10 blur-xl" />
 
-            {/* Floating badge */}
-            <div className="absolute top-6 right-6 w-10 h-10 rounded-lg bg-bg-card border border-white/10 flex items-center justify-center animate-float">
-              <HiBolt className="w-5 h-5 text-bright" />
-            </div>
           </div>
         </ScrollReveal>
 

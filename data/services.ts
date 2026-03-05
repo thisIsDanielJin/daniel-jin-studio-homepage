@@ -28,6 +28,19 @@ export const services: Service[] = [
     ],
   },
   {
+    id: "ai-integration",
+    title: "AI Integration",
+    description:
+      "Supercharge your website with AI-powered features. From intelligent chatbots to personalized experiences that engage visitors and boost conversions.",
+    icon: "HiSparkles",
+    features: [
+      "AI Chatbots",
+      "Smart automation",
+      "Personalization",
+      "Content generation",
+    ],
+  },
+  {
     id: "backend-api",
     title: "Backend & APIs",
     description:
@@ -38,19 +51,6 @@ export const services: Service[] = [
       "Database design",
       "Authentication",
       "Third-party integrations",
-    ],
-  },
-  {
-    id: "consulting",
-    title: "Technical Consulting",
-    description:
-      "Strategic advice for your digital projects. I help you choose the right technologies and architecture for your specific needs.",
-    icon: "HiLightBulb",
-    features: [
-      "Tech stack selection",
-      "Architecture planning",
-      "Code reviews",
-      "Performance optimization",
     ],
   },
 ];
